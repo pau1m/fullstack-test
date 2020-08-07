@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './app.css'
-import Cake  from "./Cake";
+import Cake  from './Cake';
+import CakeForm from './CakeForm'
 
 //@todo, change to functional compontent
 export default class App extends Component {
@@ -22,7 +23,6 @@ export default class App extends Component {
   }
 
   render() {
-
     const items = this.state.cakes.map((item) =>
       // @todo fix return of _.id
       <li key={item.id} >
@@ -35,7 +35,6 @@ export default class App extends Component {
         />
       </li>
 
-      // @todo <CakeForm />
 
     );
 
@@ -44,6 +43,7 @@ export default class App extends Component {
         <ul>
           {items}
         </ul>
+        <CakeForm />
       </div>
     )
   }
