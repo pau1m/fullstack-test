@@ -31,9 +31,7 @@ module.exports = {
   devServer: {
     port: 1337,
     open: true,
-    // proxy: {
-    //   '/api': 'http://localhost:1338'
-    // }
+    disableHostCheck: true
   },
   plugins: [
     new CleanWebpackPlugin([outputDirectory]),
