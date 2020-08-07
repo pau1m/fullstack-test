@@ -47,3 +47,13 @@ exports.updateCake = ( req, res ) => {
       res.sendStatus(404);
     })
 }
+
+exports.deleteCake = (req, res) => {
+  CakeModel.removeById(req.params.id)
+    .then((result) => {
+      res.status(200).send(result);
+    })
+    .catch(() => {
+      res.sendStatus(404);
+    })
+}
