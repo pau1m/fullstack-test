@@ -1,9 +1,9 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
-export default function CakeList (props) {
+export default function Cake() {
 
-  console.log(props)
+  //console.log(props)
 
   return (
     <div>

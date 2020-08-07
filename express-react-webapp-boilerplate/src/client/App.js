@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './app.css'
+import Cake  from "./Cake";
 
 //@todo, change to functional compontent
 export default class App extends Component {
@@ -29,6 +30,7 @@ export default class App extends Component {
     return (
       <div>
         Hello world
+        <Cake />
         <ul>
           {items}
         </ul>
