@@ -1,32 +1,37 @@
 import React, { Component } from 'react'
-
 import './app.css'
 
+//@todo, change to functional compontent
 export default class App extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      username: null
+      cakes: []
     }
   }
 
   componentDidMount() {
-    fetch('/api/getUsername')
+
+    fetch('http://localhost:1338/api/v1/cakes')
       .then(res => res.json())
-      .then(user => this.setState({
-        username: user.username
+      .then(cakes => this.setState({
+        cakes: cakes
       }))
   }
 
   render() {
+
+    const items = this.state.cakes.map((item, key) =>
+      <li key={item.name}>{item.name}</li>
+    );
+
     return (
       <div>
-        {this.state.username ? (
-          <h1>Hello {this.state.username}</h1>
-        ) : (
-          <h1>Loading.. please wait!</h1>
-        )}
+        Hello world
+        <ul>
+          {items}
+        </ul>
       </div>
     )
   }
