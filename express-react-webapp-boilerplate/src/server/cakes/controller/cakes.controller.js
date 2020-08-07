@@ -11,6 +11,17 @@ exports.getById = (req, res) => {
     })
 };
 
+exports.fetchAll = (req, res) => {
+  CakeModel.findAll()
+    .then((result) => {
+      res.status(200).send(result);
+    })
+    .catch(() => {
+      res.sendStatus(404);
+    })
+}
+
+
 exports.insertCake = ( req, res ) => {
   // @todo validation middleware
   CakeModel.createItem(req.body)

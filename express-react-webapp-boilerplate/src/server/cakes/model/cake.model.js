@@ -35,13 +35,14 @@ exports.findById = (id) => {
     });
 };
 
-exports.findAll = () => {
-  return Cake.find();
+exports.findAll = async () => {
+  return await Cake.find();
 }
 
 exports.createItem = (cakeData) => {
   const cake = new Cake(cakeData);
   return cake.save();
+  // return by searching by id -- assign save to var
 };
 
 exports.updateItem = (cakeData) => {
