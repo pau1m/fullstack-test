@@ -1,26 +1,27 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
-export default function Cake() {
-
-  //console.log(props)
+export default function Cake(props) {
+  // @todo add prop types
+  // @todo handle cases of absent data
+  // console.log(props)
 
   return (
     <div>
       <Container>
         <Row>
           <Col>
-            Picture
+            { props.imageUrl }
           </Col>
           <Col>
             <Row>
-              Name
+              { props.name }
             </Row>
             <Row>
-              Comment
+              { props.comment }
             </Row>
             <Row>
-              Yum Factor
+              { props.yumFactor }
             </Row>
           </Col>
         </Row>

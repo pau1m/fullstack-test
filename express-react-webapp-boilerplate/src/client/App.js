@@ -23,14 +23,24 @@ export default class App extends Component {
 
   render() {
 
-    const items = this.state.cakes.map((item, key) =>
-      <li key={item.name}>{item.name}</li>
+    const items = this.state.cakes.map((item) =>
+      // @todo fix return of _.id
+      <li key={item.id} >
+        <Cake
+          name={item.name}
+          comment={item.comment}
+          id={item.id}
+          yumFactor={item.yumFactor}
+          imageUrl={item.imageUrl}
+        />
+      </li>
+
+      // @todo <CakeForm />
+
     );
 
     return (
       <div>
-        Hello world
-        <Cake />
         <ul>
           {items}
         </ul>
