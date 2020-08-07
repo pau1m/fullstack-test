@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-// import { Form } from 'react-bootstrap'
-// @todo clear on submit
 
 export default function CakeForm() {
   const [name, setName] = useState("");
@@ -8,8 +6,15 @@ export default function CakeForm() {
   const [imageUrl, setImageUrl] = useState("");
   const [yumFactor, setYumFactor] = useState("");
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // gather values and send to api
+    // create a response message
+    // reset
+  }
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <input
         value={name}
         onChange={e => setName(e.target.value)}
@@ -38,8 +43,11 @@ export default function CakeForm() {
         value={yumFactor}
         onChange={e => setYumFactor(e.target.value)}
         placeholder="yumFactor"
-        type="yumFactor"
+        // type="range"
+        type="text"
         name="yumFactor"
+        min="0"
+        max="5"
         required
       />
       <button type="submit">Submit</button>
