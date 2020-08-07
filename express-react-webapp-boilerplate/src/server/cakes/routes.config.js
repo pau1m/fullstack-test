@@ -16,14 +16,15 @@ exports.routesConfig = async function (app) {
 
   app.get('/api/v1/cakes/:id', [CakeController.getById])
 
-  app.post('/api/v1/cakes', [
-    CakeController.insertCake
-  ])
+  app.post('/api/v1/cakes', [CakeController.insertCake])
 
-  // id?
-  app.put('/api/v1/cakes', (req, res) => res.send(
-    aCake
-  ))
+  app.put('/api/v1/cakes/:id', [CakeController.updateCake])
+
+  // app.put('/api/v1/cakes/:id',(req, res) => res.status(
+  //   200
+  // ).send())
+
+
 
   app.delete('/api/v1/cakes/:id', (req, res) => res.status(
     200

@@ -42,13 +42,16 @@ exports.findAll = async () => {
 exports.createItem = (cakeData) => {
   const cake = new Cake(cakeData);
   return cake.save();
-  // return by searching by id -- assign save to var
 };
 
-exports.updateItem = (cakeData) => {
-  // @todo clobber initial item
-  const cake = new Cake(cakeData);
-  return cake.save();
+exports.updateItem = async (cakeId, cakeData) => {
+  const cake = await Cake.findById(cakeId);
+
+  for (let i in cakeData) {
+    cake[i] = cakeData[i];
+  }
+
+  return cake.save()
 }
 
 exports.removeById = (cakeId) => {
