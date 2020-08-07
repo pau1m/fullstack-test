@@ -6,6 +6,8 @@ export default function CakeForm() {
   const [imageUrl, setImageUrl] = useState("");
   const [yumFactor, setYumFactor] = useState("");
 
+  const [success, setSuccess] = useState(false);
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -20,7 +22,9 @@ export default function CakeForm() {
     }).then(function(response) {
       return response.json();
     }).then(function(data) {
-      console.log(data)
+      // @todo check data (need a whole object back only getting id just now)
+      setSuccess(true)
+      // console.log(data)
     });
   }
 
@@ -64,7 +68,7 @@ export default function CakeForm() {
       />
       <button type="submit">Submit</button>
     </form>
-    {/*  success / fail message */}
+    { success === true ? 'New cake has been submitted' : ''}
     </div>
   );
 }
