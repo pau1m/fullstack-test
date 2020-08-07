@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-const bodyParser = require('body-parser');
 const CakeRouter = require('./cakes/routes.config.js');
 
 app.use(function (req, res, next) {
@@ -16,7 +15,8 @@ app.use(function (req, res, next) {
 });
 
 app.use(express.static('dist'))
-app.use(bodyParser.json());
+app.use(express.json());
+
 
 CakeRouter.routesConfig(app);
 
