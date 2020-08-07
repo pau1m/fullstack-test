@@ -10,6 +10,7 @@ const cakeSchema = new Schema({
 })
 
 // @todo limit yum 1 - 5
+// @todo clean all results of _id
 
 cakeSchema.virtual('id').get(function () {
   return this._id.toHexString();
