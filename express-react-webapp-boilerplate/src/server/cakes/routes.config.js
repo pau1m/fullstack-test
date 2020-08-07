@@ -1,3 +1,4 @@
+const CakeController = require('../cakes/controller/cakes.controller')
 
 exports.routesConfig = async function (app) {
 
@@ -25,9 +26,9 @@ exports.routesConfig = async function (app) {
     )
   })
 
-  app.post('/api/v1/cakes', (req, res) => res.status(201).send(
-    aCake
-  ))
+  app.post('/api/v1/cakes', [
+    CakeController.insertCake
+  ])
 
   // id?
   app.put('/api/v1/cakes', (req, res) => res.send(

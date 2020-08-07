@@ -1,8 +1,8 @@
-const mongoose = require('../../common/services/mongoose.service').mongoose;
+const mongoose = require('../../common/mongoose.services').mongoose
 const Schema = mongoose.Schema;
 
 const cakeSchema = new Schema({
-  id: Number,
+  cakeId: Number,
   name: String,
   comment: String,
   imageUrl: String,
@@ -53,6 +53,3 @@ exports.updateItem = (cakeData) => {
 exports.removeById = (cakeId) => {
   return Cake.remove({_id: cakeId})
 };
-
-
-
