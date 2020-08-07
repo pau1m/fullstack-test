@@ -8,12 +8,24 @@ export default function CakeForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // gather values and send to api
-    // create a response message
-    // reset
+
+    fetch('http://localhost:1338/api/v1/cakes', {
+      method: 'post',
+      body: JSON.stringify({
+        name: name,
+        comment: comment,
+        imageUrl: imageUrl,
+        yumFactor: yumFactor
+      })
+    }).then(function(response) {
+      return response.json();
+    }).then(function(data) {
+      console.log(data)
+    });
   }
 
   return (
+    <div>
     <form onSubmit={handleSubmit}>
       <input
         value={name}
@@ -52,6 +64,8 @@ export default function CakeForm() {
       />
       <button type="submit">Submit</button>
     </form>
+    {/*  success / fail message */}
+    </div>
   );
 }
 
