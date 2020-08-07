@@ -1,0 +1,193 @@
+{
+	"info": {
+		"_postman_id": "10319668-9220-416c-b96a-7f33dac608fc",
+		"name": "Cake",
+		"description": "cake",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get all",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "127.0.0.1:8181/api/v1/cakes",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"v1",
+						"cakes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get by id",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"foso\",\n    \"comment\": \"bssssoo\",\n    \"imageUrl\": \"mossso\",\n    \"yumFactor\": 1,\n    \"id\": \"5f2d3f0ca6a05f31252e16de\"\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:1337/api/v1/cakes/5f2d3f0ca6a05f31252e16de",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"v1",
+						"cakes",
+						"5f2d3f0ca6a05f31252e16de"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"foo\",\n    \"comment\": \"boo\",\n    \"imageUrl\": \"moo\",\n    \"yumFactor\": 1\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:1337/api/v1/cakes",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"v1",
+						"cakes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\n        \"name\": \"foo\",\n        \"comment\": \"bssssoo\",\n        \"imageUrl\": \"masoo\",\n        \"yumFactor\": \"2\"\n\n    }\n    "
+				},
+				"url": {
+					"raw": "127.0.0.1:1337/api/v1/cakes/5f2d4b986602e232c0d4b429",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"v1",
+						"cakes",
+						"5f2d4b986602e232c0d4b429"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "",
+						"type": "text",
+						"value": "application/json",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "127.0.0.1:1337/api/v1/cakes/1",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"v1",
+						"cakes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
