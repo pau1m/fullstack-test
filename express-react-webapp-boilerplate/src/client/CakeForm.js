@@ -13,6 +13,10 @@ export default function CakeForm() {
 
     fetch('http://localhost:1338/api/v1/cakes', {
       method: 'post',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify({
         name: name,
         comment: comment,
@@ -22,7 +26,6 @@ export default function CakeForm() {
     }).then(function(response) {
       return response.json();
     }).then(function(data) {
-      // @todo check data (need a whole object back only getting id just now)
       setSuccess(true)
       // console.log(data)
     });
