@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, Modal, Container, Row, Col } from 'react-bootstrap'
+import { Button, Modal, Card } from 'react-bootstrap'
 
 export default function CakeModal(props) {
   const [show, setShow] = useState(false);
@@ -13,29 +13,18 @@ export default function CakeModal(props) {
         View
       </Button>
 
-      <Modal show={show} onHide={handleClose} animation={false}>
-        <Modal.Header closeButton>
-          <Modal.Title>{props.name}</Modal.Title>
-        </Modal.Header>
+      <Modal show={show} size='lg' onHide={handleClose} animation={false}>
         <Modal.Body>
-          <Container>
-            <Row>
-              <Col>
-                { props.imageUrl }
-              </Col>
-              <Col>
-                <Row>
-                  { props.name }
-                </Row>
-                <Row>
-                  { props.comment }
-                </Row>
-                <Row>
-                  { props.yumFactor }
-                </Row>
-              </Col>
-            </Row>
-          </Container>
+          <Card>
+            <Card.Img variant="top" src={`https://via.placeholder.com/360x200.png?text=${props.imageUrl}`} />
+            <Card.Body>
+              <Card.Title>{props.name}</Card.Title>
+              <Card.Text>
+                <p> Comment: {props.comment} </p>
+                <p> Rating: {props.yumFactor}</p>
+              </Card.Text>
+            </Card.Body>
+          </Card>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
