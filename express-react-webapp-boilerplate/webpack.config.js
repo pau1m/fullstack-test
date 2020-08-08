@@ -28,6 +28,11 @@ module.exports = {
       }
     ]
   },
+  externals: {
+    // require("jquery") is external and available
+    //  on the global var jQuery
+    "jquery": "jQuery"
+  },
   devServer: {
     port: 1337,
     open: true,
