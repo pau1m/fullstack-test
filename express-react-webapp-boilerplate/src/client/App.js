@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import './app.css'
-import Cake  from './Cake';
-import CakeForm from './CakeForm'
-
-//@todo, change to functional compontent
+import CakeModalForm from './CakeModalForm'
+import CakeSummary from "./CakeSummary";
+//@todo, consider change to functional component
 export default class App extends Component {
   constructor(props) {
     super(props)
@@ -26,7 +25,7 @@ export default class App extends Component {
     const items = this.state.cakes.map((item) =>
       // @todo fix return of _.id
       <li key={item.id} >
-        <Cake
+        <CakeSummary
           name={item.name}
           comment={item.comment}
           id={item.id}
@@ -34,16 +33,14 @@ export default class App extends Component {
           imageUrl={item.imageUrl}
         />
       </li>
-
-
     );
 
     return (
       <div>
+        <CakeModalForm />
         <ul>
           {items}
         </ul>
-        <CakeForm />
       </div>
     )
   }
