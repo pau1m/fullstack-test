@@ -54,7 +54,7 @@ export default function CakeForm() {
           <Modal.Title>Add Cake</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <form>
+          <form id='add-cake-form' onSubmit={handleSubmit}>
             {/* @todo bootstrapify form */}
 
             <input
@@ -102,8 +102,7 @@ export default function CakeForm() {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-
-          <Button disabled={success} variant="primary" onClick={handleSubmit}>
+          <Button disabled={success} variant="primary" form='add-cake-form' type='submit' value='Submit'>
             Save Cake
           </Button>
         </Modal.Footer>
