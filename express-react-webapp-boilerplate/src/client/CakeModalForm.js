@@ -84,13 +84,14 @@ export default function CakeForm() {
               />
               </Form.Group>
               <Form.Group controlId="setYumFactor">
-                <Form.Label>Rating (1 - 5)</Form.Label>
-                <Form.Control
-                  type="number"
-                  placeholder="3"
-                  onChange={e => setYumFactor(e.target.value)}
-                  required
-                />
+                <Form.Label>Rating</Form.Label>
+                <Form.Control as="select">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </Form.Control>
               </Form.Group>
           </Form>
         </Modal.Body>
