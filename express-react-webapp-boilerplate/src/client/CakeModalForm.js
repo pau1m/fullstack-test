@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {Button, Modal} from "react-bootstrap";
+import { Button, Modal, Form } from "react-bootstrap";
 
 export default function CakeForm() {
   // form elements
@@ -54,49 +54,47 @@ export default function CakeForm() {
           <Modal.Title>Add Cake</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <form id='add-cake-form' onSubmit={handleSubmit}>
-            {/* @todo bootstrapify form */}
-
-            <input
-              value={name}
-              onChange={e => setName(e.target.value)}
+          <Form id='add-cake-form' onSubmit={handleSubmit}>
+          <Form.Group controlId="name">
+            <Form.Label>Name</Form.Label>
+            <Form.Control
+              type="text"
               placeholder="name"
-              type="text"
-              name="name"
+              onChange={e => setName(e.target.value)}
               required
             />
-            <input
-              value={comment}
-              onChange={e => setComment(e.target.value)}
-              placeholder="comment"
-              type="text"
-              name="comment"
-              required
-            />
-            <input
-              value={imageUrl}
-              onChange={e => setImageUrl(e.target.value)}
-              placeholder="image"
-              type="text"
-              name="imageUrl"
-              required
-            />
-            <label for="yumFactor">How yum? (1-5)</label>
-            <input
-              value={yumFactor}
-              onChange={e => setYumFactor(e.target.value)}
-              placeholder="5"
-              type="number"
-              name="yumFactor"
-              min="1"
-              max="5"
-              required
-            />
-          </form>
-
+          </Form.Group>
+            <Form.Group controlId="comment">
+              <Form.Label>Comment</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="comment"
+                onChange={e => setComment(e.target.value)}
+                required
+              />
+            </Form.Group>
+            <Form.Group controlId="imageUrl">
+              <Form.Label>Image</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="http://example.com/foo.png"
+                onChange={e => setImageUrl(e.target.value)}
+                required
+              />
+            </Form.Group>
+            <Form.Group controlId="setYumFactor">
+              <Form.Label>Rating (1 - 5)</Form.Label>
+              <Form.Control
+                type="number"
+                placeholder="3"
+                onChange={e => setYumFactor(e.target.value)}
+                required
+              />
+            </Form.Group>
+          </Form>
         </Modal.Body>
         <Modal.Footer>
-          <p text-justify>
+          <p className='mx-auto text-success'>
             { success === true ? 'New cake has been submitted' : ''}
           </p>
           <Button variant="secondary" onClick={handleClose}>
@@ -108,7 +106,5 @@ export default function CakeForm() {
         </Modal.Footer>
       </Modal>
     </>
-
-
   );
 }
