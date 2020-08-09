@@ -21,7 +21,7 @@ Not designed for production use. Only intended for use in local environment.
 Tasks remaining to be completed listed in repo issue queue (I went over time).
 
 
-Ignored the user stories in terms of chunking commits (no branches / pull requests) and instead used (relatively) atomic commits - to give a fully realistic representation of workflow and progress. In retrospect, might have been a bit over-the-top in terms of number of commits.
+Ignored the user stories in terms of chunking commits (no branches / pull requests) and instead used (relatively) atomic commits - to give a fully realistic path of progress. In retrospect, might have been a bit over-the-top in terms of number of commits.
 
 
 Got hung up on a couple of stupid bugs.
@@ -32,5 +32,17 @@ Got hung up on a couple of stupid bugs.
 
 
 @todo add after committing screenshots link them here.
+
+Main page
+![page](https://github.com/pau1m/fullstack-test/blob/master/notes/page.png?raw=true)
+
+Cake form
+![page](https://github.com/pau1m/fullstack-test/blob/master/notes/cakeform.png?raw=true)
+
+Cake display
+![modal](https://github.com/pau1m/fullstack-test/blob/master/notes/cakemodal.png?raw=true)
+
+
+
 
 
