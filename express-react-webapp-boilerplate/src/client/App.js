@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import './app.css'
+import { Container, Row, Col } from 'react-bootstrap'
 import CakeModalForm from './CakeModalForm'
 import CakeSummary from "./CakeSummary";
-//@todo, consider change to functional component
+
 export default class App extends Component {
   constructor(props) {
     super(props)
@@ -24,7 +25,7 @@ export default class App extends Component {
   render() {
     const items = this.state.cakes.map((item) =>
       // @todo fix return of _.id
-      <li key={item.id} >
+      <Col xs={12} md={4} lg={3} className={'d-flex pb-3'} key={item.id} >
         <CakeSummary
           name={item.name}
           comment={item.comment}
@@ -32,16 +33,26 @@ export default class App extends Component {
           yumFactor={item.yumFactor}
           imageUrl={item.imageUrl}
         />
-      </li>
+      </Col>
     );
 
     return (
-      <div>
-        <CakeModalForm />
-        <ul>
-          {items}
-        </ul>
-      </div>
+      <>
+
+  <Container>
+          <Row>
+            <Col sm={2} className='my-auto'>
+              <CakeModalForm />
+            </Col>
+            <Col sm={10} >
+              <h1>Crud Cakes</h1>
+            </Col>
+          </Row>
+          <Row>
+            {items}
+          </Row>
+        </Container>
+      </>
     )
   }
 }
