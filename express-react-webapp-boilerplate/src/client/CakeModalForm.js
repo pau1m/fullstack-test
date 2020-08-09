@@ -56,10 +56,10 @@ export default function CakeForm() {
         <Modal.Body>
           <Form id='add-cake-form' onSubmit={handleSubmit}>
             <Form.Group controlId="name">
-              <Form.Label>Name</Form.Label>
+              <Form.Label>Title</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="name"
+                placeholder="Cake name"
                 onChange={e => setName(e.target.value)}
                 required
               />
@@ -78,7 +78,7 @@ export default function CakeForm() {
               <Form.Control
                 as="textarea"
                 rows='3'
-                placeholder="comment"
+                placeholder="How you feel about this cake?"
                 onChange={e => setComment(e.target.value)}
                 required
               />
