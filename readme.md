@@ -1,15 +1,19 @@
-#Readme
+# Readme
 
-##Requirements
+## Requirements
 
 Yarn installed globally.
 
-##Installation
+## Installation
 
 ```yarn``` to install npm modules
 
 
 ```yarn start``` to launch client and server.
+
+App at ```http://localhost:1337```
+
+API at ```http://localhost:1338```
 
 
 Chose to use [this boilerplate](https://github.com/alexdevero/express-react-webapp-boilerplate) as base scaffolding and used my own past work to inform technical approach to server.
@@ -30,8 +34,6 @@ Got hung up on a couple of stupid bugs.
 * Set to only allow Patch but was actually using put. Mismatch between routes and accept header.
 * Using singular 'cake' in postman path (compounded by issue above)
 
-
-@todo add after committing screenshots link them here.
 
 Main page
 ![page](https://github.com/pau1m/fullstack-test/blob/master/notes/page.png?raw=true)
