@@ -6,7 +6,7 @@ export default function CakeForm() {
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
   const [imageUrl, setImageUrl] = useState("");
-  const [yumFactor, setYumFactor] = useState("");
+  const [yumFactor, setYumFactor] = useState("1");
   // modal interaction
   const [show, setShow] = useState(false);
   const handleClose = () => {
@@ -83,9 +83,12 @@ export default function CakeForm() {
                 required
               />
               </Form.Group>
-              <Form.Group controlId="setYumFactor">
+              <Form.Group controlId="yumFactor">
                 <Form.Label>Rating</Form.Label>
-                <Form.Control as="select">
+                <Form.Control
+                  as="select"
+                  onChange={e => setYumFactor(e.target.value)}
+                >
                   <option>1</option>
                   <option>2</option>
                   <option>3</option>
