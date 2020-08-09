@@ -1,20 +1,36 @@
 # Readme
 
+CRUD Cake app. 
+
+
+React / Bootstrap frontend. 
+
+
+Node / Express / Mongo backend. 
+
 ## Requirements
 
-Yarn installed globally.
+* Node >= 14.5
+* Yarn installed globally.
+* Mongo >= 4.4 on port 27017
 
 ## Installation
+
+In project root
+
 
 ```yarn``` to install npm modules
 
 
 ```yarn start``` to launch client and server.
 
+
 App at ```http://localhost:1337```
+
 
 API at ```http://localhost:1338```
 
+### Comments on process
 
 Chose to use [this boilerplate](https://github.com/alexdevero/express-react-webapp-boilerplate) as base scaffolding and used my own past work to inform technical approach to server.
 
@@ -22,7 +38,7 @@ Chose to use [this boilerplate](https://github.com/alexdevero/express-react-weba
 Not designed for production use. Only intended for use in local environment.
 
 
-Tasks remaining to be completed listed in repo issue queue (I went over time).
+Tasks remaining to be completed listed in repo [issue queue](https://github.com/pau1m/fullstack-test/issues) (I went over time).
 
 
 Ignored the user stories in terms of chunking commits (no branches / pull requests) and instead used (relatively) atomic commits - to give a fully realistic path of progress. In retrospect, might have been a bit over-the-top in terms of number of commits.
@@ -34,6 +50,7 @@ Got hung up on a couple of stupid bugs.
 * Set to only allow Patch but was actually using put. Mismatch between routes and accept header.
 * Using singular 'cake' in postman path (compounded by issue above)
 
+### Screenshots
 
 Main page
 ![page](https://github.com/pau1m/fullstack-test/blob/master/notes/page.png?raw=true)
@@ -43,8 +60,3 @@ Cake form
 
 Cake display
 ![modal](https://github.com/pau1m/fullstack-test/blob/master/notes/cakemodal.png?raw=true)
-
-
-
-
-
