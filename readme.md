@@ -16,7 +16,7 @@ Node / Express / Mongo backend.
 
 ## Installation
 
-In project root
+In project root ```cake/```
 
 
 ```yarn``` to install npm modules
@@ -29,6 +29,17 @@ App at ```http://localhost:1337```
 
 
 API at ```http://localhost:1338```
+
+
+## Tests
+
+In project root ```cake/```
+
+
+Start server ```yarn server```
+
+
+Run test ```yarn test```
 
 ### Comments on process
 
