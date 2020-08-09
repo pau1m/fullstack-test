@@ -24,8 +24,8 @@ export default class App extends Component {
 
   render() {
     const items = this.state.cakes.map((item) =>
-      // @todo fix return of _.id
-      <Col xs={12} md={4} lg={3} className={'d-flex pb-3'} key={item.id} >
+
+      <Col xs={6} md={4} lg={3} className={'d-flex pb-3'} key={item.id} >
         <CakeSummary
           name={item.name}
           comment={item.comment}
@@ -38,13 +38,12 @@ export default class App extends Component {
 
     return (
       <>
-
-  <Container>
+        <Container>
           <Row>
-            <Col sm={2} className='my-auto'>
+            <Col xs={2} sm={3} className='my-auto'>
               <CakeModalForm />
             </Col>
-            <Col sm={10} >
+            <Col xs={10} sm={9} >
               <h1>Crud Cakes</h1>
             </Col>
           </Row>
