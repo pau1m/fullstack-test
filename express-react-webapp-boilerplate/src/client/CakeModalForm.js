@@ -55,21 +55,12 @@ export default function CakeForm() {
         </Modal.Header>
         <Modal.Body>
           <Form id='add-cake-form' onSubmit={handleSubmit}>
-          <Form.Group controlId="name">
-            <Form.Label>Name</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="name"
-              onChange={e => setName(e.target.value)}
-              required
-            />
-          </Form.Group>
-            <Form.Group controlId="comment">
-              <Form.Label>Comment</Form.Label>
+            <Form.Group controlId="name">
+              <Form.Label>Name</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="comment"
-                onChange={e => setComment(e.target.value)}
+                placeholder="name"
+                onChange={e => setName(e.target.value)}
                 required
               />
             </Form.Group>
@@ -82,15 +73,25 @@ export default function CakeForm() {
                 required
               />
             </Form.Group>
-            <Form.Group controlId="setYumFactor">
-              <Form.Label>Rating (1 - 5)</Form.Label>
+            <Form.Group controlId="comment">
+              <Form.Label>Comment</Form.Label>
               <Form.Control
-                type="number"
-                placeholder="3"
-                onChange={e => setYumFactor(e.target.value)}
+                as="textarea"
+                rows='3'
+                placeholder="comment"
+                onChange={e => setComment(e.target.value)}
                 required
               />
-            </Form.Group>
+              </Form.Group>
+              <Form.Group controlId="setYumFactor">
+                <Form.Label>Rating (1 - 5)</Form.Label>
+                <Form.Control
+                  type="number"
+                  placeholder="3"
+                  onChange={e => setYumFactor(e.target.value)}
+                  required
+                />
+              </Form.Group>
           </Form>
         </Modal.Body>
         <Modal.Footer>
