@@ -1,9 +1,10 @@
 import React, { useState } from "react"
 import { Button, Modal, Form } from "react-bootstrap"
-import { connect } from 'react-redux'
 import { addCake } from './actions/cakeActions'
 import { useDispatch } from 'react-redux'
 import PropTypes from 'prop-types'
+
+//@todo implement useSelector
 
 export default function CakeForm() {
   // form elements
@@ -24,7 +25,7 @@ export default function CakeForm() {
   // request
   const dispatch = useDispatch();
   // response
-  const [success, setSuccess] = useState(false)
+  //const [success, setSuccess] = useState(false)
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -35,8 +36,8 @@ export default function CakeForm() {
       yumFactor: yumFactor
     }))
 
-    // @todo deal with response and fail
-    setSuccess(true)
+    // setSuccess(true)
+    handleClose()
   }
 
   return (
@@ -95,13 +96,13 @@ export default function CakeForm() {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <p className='mx-auto text-success'>
-            { success === true ? 'New cake has been submitted' : ''}
-          </p>
+          {/*<p className='mx-auto text-success'>*/}
+          {/*  { success === true ? 'New cake has been submitted' : ''}*/}
+          {/*</p>*/}
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button disabled={success} variant="primary" form='add-cake-form' type='submit' value='Submit'>
+          <Button variant="primary" form='add-cake-form' type='submit' value='Submit'>
             Save Cake
           </Button>
         </Modal.Footer>
@@ -110,7 +111,7 @@ export default function CakeForm() {
   );
 }
 
-// CakeForm.propTypes = {
-//   addCake: PropTypes.func,
-//   cake: PropTypes.object,
-// };
+CakeForm.propTypes = {
+  addCake: PropTypes.func,
+  cake: PropTypes.object,
+};

@@ -13,7 +13,7 @@ class CakeList extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.addCake) {
-      this.props.cakes.unshift(nextProps.addCake);
+      this.props.cakes.push(nextProps.addCake);
     }
   }
 
@@ -33,10 +33,9 @@ class CakeList extends Component {
     ) : []
 
     return (
-
         <Container>
           <Row>
-            {items}
+            {items.reverse()}
           </Row>
         </Container>
     )
