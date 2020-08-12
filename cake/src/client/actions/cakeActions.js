@@ -1,4 +1,4 @@
-import { FETCH_CAKES, ADD_CAKE } from './types';
+import { FETCH_CAKES, ADD_CAKE } from './types'
 
 export const fetchCakes = () => dispatch => {
   fetch('http://localhost:1338/api/v1/cakes', {
@@ -15,8 +15,8 @@ export const fetchCakes = () => dispatch => {
         type: FETCH_CAKES,
         payload: cakes
       })
-    );
-};
+    )
+}
 
 export const addCake = cakeData => dispatch => {
   fetch('http://localhost:1338/api/v1/cakes', {

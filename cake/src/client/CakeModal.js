@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import { Button, Modal, Card } from 'react-bootstrap'
 
 export default function CakeModal(props) {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false)
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleClose = () => setShow(false)
+  const handleShow = () => setShow(true)
 
   return (
     <>

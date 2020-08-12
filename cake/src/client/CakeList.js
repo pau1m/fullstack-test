@@ -1,19 +1,19 @@
 import React, { Component } from 'react'
-import {Col, Container, Row} from "react-bootstrap";
-import CakeSummary from "./CakeSummary";
+import {Col, Container, Row} from "react-bootstrap"
+import CakeSummary from "./CakeSummary"
 import PropTypes from 'prop-types'
-import { connect } from 'react-redux';
-import { fetchCakes } from './actions/cakeActions';
+import { connect } from 'react-redux'
+import { fetchCakes } from './actions/cakeActions'
 
 class CakeList extends Component {
 
   componentDidMount() {
-    this.props.fetchCakes();
+    this.props.fetchCakes()
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.addCake) {
-      this.props.cakes.push(nextProps.addCake);
+      this.props.cakes.push(nextProps.addCake)
     }
   }
 

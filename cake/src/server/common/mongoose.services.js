@@ -15,7 +15,7 @@ const options = {
   bufferMaxEntries: 0,
   useNewUrlParser: true,
   useUnifiedTopology: true
-};
+}
 
 const connectWithRetry = () => {
   console.log('MongoDB connection with retry');
@@ -27,7 +27,7 @@ const connectWithRetry = () => {
     console.log('MongoDB connection unsuccessful, retry after 5 seconds. ', ++count);
     setTimeout(connectWithRetry, 5000)
   })
-};
+}
 
 connectWithRetry();
 
