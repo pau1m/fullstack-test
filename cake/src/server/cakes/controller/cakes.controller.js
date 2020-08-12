@@ -22,7 +22,6 @@ exports.fetchAll = (req, res) => {
 }
 
 exports.insertCake = ( req, res ) => {
-  console.log(req.body)
   CakeModel.createItem(req.body)
     .then((result) => {
       res.status(201).send(result);

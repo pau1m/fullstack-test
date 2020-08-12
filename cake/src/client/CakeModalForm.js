@@ -1,27 +1,33 @@
 import React, { useState } from "react";
 import { Button, Modal, Form } from "react-bootstrap";
+import { connect } from 'react-redux'
+import { addCake } from './actions/cakeActions'
+import { useDispatch, useSelector } from 'react-redux'
+import {ADD_CAKE} from "./actions/types";
 
 export default function CakeForm() {
   // form elements
-  const [name, setName] = useState("");
-  const [comment, setComment] = useState("");
-  const [imageUrl, setImageUrl] = useState("");
-  const [yumFactor, setYumFactor] = useState("1");
+  const [name, setName] = useState("")
+  const [comment, setComment] = useState("")
+  const [imageUrl, setImageUrl] = useState("")
+  const [yumFactor, setYumFactor] = useState("1")
   // modal interaction
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false)
   const handleClose = () => {
-    setShow(false);
-    setName('');
-    setComment('');
-    setImageUrl('');
-    setYumFactor('');
+    setShow(false)
+    setName('')
+    setComment('')
+    setImageUrl('')
+    setYumFactor('')
   }
-  const handleShow = () => setShow(true);
+  const handleShow = () => setShow(true)
+  // request
+  const dispatch = useDispatch();
   // response
-  const [success, setSuccess] = useState(false);
+  const [success, setSuccess] = useState(false)
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
     fetch('http://localhost:1338/api/v1/cakes', {
       method: 'post',
@@ -39,7 +45,7 @@ export default function CakeForm() {
       return response.json();
     }).then(function(data) {
       setSuccess(true)
-      // console.log(data)
+      // @odo deal with fail condition
     });
   }
 
@@ -113,3 +119,5 @@ export default function CakeForm() {
     </>
   );
 }
+
+// export default connect(null, { addCake })(CakeForm)
