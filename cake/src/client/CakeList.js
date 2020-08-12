@@ -11,6 +11,12 @@ class CakeList extends Component {
     this.props.fetchCakes();
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.addCake) {
+      this.props.cakes.unshift(nextProps.addCake);
+    }
+  }
+
   render() {
 
     const items = (this.props.cakes) ? this.props.cakes.map((item) =>
@@ -40,10 +46,12 @@ class CakeList extends Component {
 CakeList.propTypes = {
   fetchCakes: PropTypes.func,
   cakes: PropTypes.array,
+  cake: PropTypes.object
 };
 
 const mapStateToProps = state => ({
   cakes: state.cakes.items,
+  addCake: state.cakes.item
 });
 
 export default connect(mapStateToProps, { fetchCakes })(CakeList);
