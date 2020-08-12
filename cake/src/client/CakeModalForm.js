@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { Button, Modal, Form } from "react-bootstrap";
+import React, { useState } from "react"
+import { Button, Modal, Form } from "react-bootstrap"
 import { connect } from 'react-redux'
 import { addCake } from './actions/cakeActions'
-import { useDispatch, useSelector } from 'react-redux'
-import {ADD_CAKE} from "./actions/types";
+import { useDispatch } from 'react-redux'
+import PropTypes from 'prop-types'
 
 export default function CakeForm() {
   // form elements
@@ -28,25 +28,15 @@ export default function CakeForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    dispatch(addCake( {
+      name: name,
+      comment: comment,
+      imageUrl: imageUrl,
+      yumFactor: yumFactor
+    }))
 
-    fetch('http://localhost:1338/api/v1/cakes', {
-      method: 'post',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        name: name,
-        comment: comment,
-        imageUrl: imageUrl,
-        yumFactor: yumFactor
-      })
-    }).then(function(response) {
-      return response.json();
-    }).then(function(data) {
-      setSuccess(true)
-      // @odo deal with fail condition
-    });
+    // @todo deal with response and fail
+    setSuccess(true)
   }
 
   return (
@@ -120,4 +110,7 @@ export default function CakeForm() {
   );
 }
 
-// export default connect(null, { addCake })(CakeForm)
+// CakeForm.propTypes = {
+//   addCake: PropTypes.func,
+//   cake: PropTypes.object,
+// };
