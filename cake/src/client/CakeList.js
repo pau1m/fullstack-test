@@ -46,12 +46,12 @@ CakeList.propTypes = {
   fetchCakes: PropTypes.func,
   cakes: PropTypes.array,
   cake: PropTypes.object
-};
+}
 
 const mapStateToProps = state => ({
   cakes: state.cakes.items,
   addCake: state.cakes.item
-});
+})
 
 export default connect(mapStateToProps, { fetchCakes })(CakeList);
 

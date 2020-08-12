@@ -1,16 +1,16 @@
 const express = require('express');
 const app = express();
-const CakeRouter = require('./cakes/routes.config.js');
+const CakeRouter = require('./cakes/routes.config.js')
 
 app.use(function (req, res, next) {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Methods', 'GET, POST', 'PUT', /*patch*/ 'DELETE');
-  res.header('Access-Control-Expose-Headers', 'Content-Length');
-  res.header('Access-Control-Allow-Headers', 'Accept, Content-Type, X-Requested-With, Range');
+  res.header('Access-Control-Allow-Origin', '*')
+  res.header('Access-Control-Allow-Methods', 'GET, POST', 'PUT', /*patch*/ 'DELETE')
+  res.header('Access-Control-Expose-Headers', 'Content-Length')
+  res.header('Access-Control-Allow-Headers', 'Accept, Content-Type, X-Requested-With, Range')
   if (req.method === 'OPTIONS') {
-    return res.send(200);
+    return res.send(200)
   } else {
-    return  next();
+    return  next()
   }
 });
 

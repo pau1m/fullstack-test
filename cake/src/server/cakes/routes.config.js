@@ -1,6 +1,6 @@
 const CakeController = require('../cakes/controller/cakes.controller')
 
-exports.routesConfig = async function (app) {
+exports.routesConfig = function (app) {
 
   app.get('/api/v1/cakes', [CakeController.fetchAll])
 
