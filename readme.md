@@ -12,11 +12,12 @@ Node / Express / Mongo backend.
 
 * Node >= 14.5
 * Yarn installed globally.
-* Mongo >= 4.4 on port 27017
 
 ## Installation
 
 In project root ```cake/```
+
+```cp example.env .env``` copy environment vars
 
 
 ```yarn``` to install npm modules

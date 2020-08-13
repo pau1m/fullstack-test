@@ -17,8 +17,7 @@ const options = {
 
 const connectWithRetry = () => {
   console.log('MongoDB connection with retry');
-  // changed to 'localhost' from 'mongo', consider changing and using docker container
-  //
+
   mongoose.connect(config.db_connection, options).then(() => {
     console.log('MongoDB is connected')
   }).catch( err => {
