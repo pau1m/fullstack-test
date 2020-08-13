@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import './app.css'
 import { Container, Row, Col } from 'react-bootstrap'
-import CakeModalForm from './CakeModalForm'
-import CakeList from './CakeList'
+import CakeModalForm from './components/CakeModalForm'
+import CakeList from './components/CakeList'
 import { Provider } from 'react-redux'
 import store from './store'
 

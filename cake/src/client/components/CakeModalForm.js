@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { Button, Modal, Form } from "react-bootstrap"
-import { addCake } from './actions/cakeActions'
+import { addCake } from '../actions/cakeActions'
 import { useDispatch } from 'react-redux'
 import PropTypes from 'prop-types'
 

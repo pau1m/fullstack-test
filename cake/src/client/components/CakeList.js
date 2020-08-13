@@ -3,7 +3,7 @@ import {Col, Container, Row} from "react-bootstrap"
 import CakeSummary from "./CakeSummary"
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { fetchCakes } from './actions/cakeActions'
+import { fetchCakes } from '../actions/cakeActions'
 
 class CakeList extends Component {
 
@@ -30,7 +30,7 @@ class CakeList extends Component {
           imageUrl={item.imageUrl}
         />
       </Col>
-    ) : []
+    ) : []   // quick hack @todo fix typescript thunk types complaining on initialState
 
     return (
         <Container>
