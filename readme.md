@@ -44,23 +44,17 @@ Run test ```yarn test```
 
 ### Comments on process
 
-Chose to use [this boilerplate](https://github.com/alexdevero/express-react-webapp-boilerplate) as base scaffolding and used my own past work to inform technical approach to server.
+Originally chose to use [this boilerplate](https://github.com/alexdevero/express-react-webapp-boilerplate) as base scaffolding and used my own past work to inform technical approach to server.
+
+
+Adapted from a task set by another company (requested features in TVC spec were very similar).
 
 
 Not designed for production use. Only intended for use in local environment.
 
 
-Tasks remaining to be completed listed in repo [issue queue](https://github.com/pau1m/fullstack-test/issues) (I went over time).
+Tasks remaining to be completed listed in repo [issue queue](https://github.com/pau1m/fullstack-test/issues) 
 
-
-Ignored the user stories in terms of chunking commits (no branches / pull requests) and instead used (relatively) atomic commits - to give a fully realistic path of progress. In retrospect, might have been a bit over-the-top in terms of number of commits.
-
-
-Got hung up on a couple of stupid bugs.
-
-* Old version of React didn't allow modern functional components. Had to update React and Webpack and add additional package.
-* Set to only allow Patch but was actually using put. Mismatch between routes and accept header.
-* Using singular 'cake' in postman path (compounded by issue above)
 
 ### Screenshots
 
