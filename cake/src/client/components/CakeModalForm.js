@@ -1,46 +1,43 @@
-import React, { useState } from "react";
-import { Button, Modal, Form } from "react-bootstrap";
+import React, { useState } from "react"
+import { Button, Modal, Form } from "react-bootstrap"
+import { addCake } from '../actions/cakeActions'
+import { useDispatch } from 'react-redux'
+import PropTypes from 'prop-types'
+
+//@todo implement useSelector
 
 export default function CakeForm() {
   // form elements
-  const [name, setName] = useState("");
-  const [comment, setComment] = useState("");
-  const [imageUrl, setImageUrl] = useState("");
-  const [yumFactor, setYumFactor] = useState("1");
+  const [name, setName] = useState("")
+  const [comment, setComment] = useState("")
+  const [imageUrl, setImageUrl] = useState("")
+  const [yumFactor, setYumFactor] = useState("1")
   // modal interaction
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false)
   const handleClose = () => {
-    setShow(false);
-    setName('');
-    setComment('');
-    setImageUrl('');
-    setYumFactor('');
+    setShow(false)
+    setName('')
+    setComment('')
+    setImageUrl('')
+    setYumFactor('')
   }
-  const handleShow = () => setShow(true);
+  const handleShow = () => setShow(true)
+  // request
+  const dispatch = useDispatch();
   // response
-  const [success, setSuccess] = useState(false);
+  //const [success, setSuccess] = useState(false)
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault()
+    dispatch(addCake( {
+      name: name,
+      comment: comment,
+      imageUrl: imageUrl,
+      yumFactor: yumFactor
+    }))
 
-    fetch('http://localhost:1338/api/v1/cakes', {
-      method: 'post',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        name: name,
-        comment: comment,
-        imageUrl: imageUrl,
-        yumFactor: yumFactor
-      })
-    }).then(function(response) {
-      return response.json();
-    }).then(function(data) {
-      setSuccess(true)
-      // console.log(data)
-    });
+    // setSuccess(true)
+    handleClose()
   }
 
   return (
@@ -99,13 +96,13 @@ export default function CakeForm() {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <p className='mx-auto text-success'>
-            { success === true ? 'New cake has been submitted' : ''}
-          </p>
+          {/*<p className='mx-auto text-success'>*/}
+          {/*  { success === true ? 'New cake has been submitted' : ''}*/}
+          {/*</p>*/}
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button disabled={success} variant="primary" form='add-cake-form' type='submit' value='Submit'>
+          <Button variant="primary" form='add-cake-form' type='submit' value='Submit'>
             Save Cake
           </Button>
         </Modal.Footer>
@@ -113,3 +110,8 @@ export default function CakeForm() {
     </>
   );
 }
+
+CakeForm.propTypes = {
+  addCake: PropTypes.func,
+  cake: PropTypes.object,
+};

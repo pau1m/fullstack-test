@@ -1,9 +1,7 @@
 const mongoose = require('mongoose');
-let count = 0;
+const config = require('../../../config').config
 
-const config = {
-  mongoUrl: 'mongodb://localhost:27017/crudcake'
-}
+let count = 0;
 
 const options = {
   autoIndex: true, // disable for live
@@ -15,19 +13,19 @@ const options = {
   bufferMaxEntries: 0,
   useNewUrlParser: true,
   useUnifiedTopology: true
-};
+}
 
 const connectWithRetry = () => {
   console.log('MongoDB connection with retry');
-  // changed to 'localhost' from 'mongo', consider changing and using docker container
-  //
-  mongoose.connect(config.mongoUrl, options).then(() => {
+
+  mongoose.connect(config.db_connection, options).then(() => {
     console.log('MongoDB is connected')
   }).catch( err => {
     console.log('MongoDB connection unsuccessful, retry after 5 seconds. ', ++count);
+    console.log(err)
     setTimeout(connectWithRetry, 5000)
   })
-};
+}
 
 connectWithRetry();
 

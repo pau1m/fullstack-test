@@ -1,43 +1,16 @@
 import React, { Component } from 'react'
 import './app.css'
 import { Container, Row, Col } from 'react-bootstrap'
-import CakeModalForm from './CakeModalForm'
-import CakeSummary from "./CakeSummary";
+import CakeModalForm from './components/CakeModalForm'
+import CakeList from './components/CakeList'
+import { Provider } from 'react-redux'
+import store from './store'
 
 export default class App extends Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      cakes: []
-    }
-  }
-
-  componentDidMount() {
-
-    fetch('http://localhost:1338/api/v1/cakes')
-      .then(res => res.json())
-      .then(cakes => this.setState({
-        cakes: cakes
-      }))
-  }
 
   render() {
-    const items = this.state.cakes.map((item) =>
-
-      <Col xs={6} md={4} lg={3} className={'d-flex pb-3'} key={item.id} >
-        <CakeSummary
-          name={item.name}
-          comment={item.comment}
-          id={item.id}
-          yumFactor={item.yumFactor}
-          imageUrl={item.imageUrl}
-        />
-      </Col>
-    );
-
     return (
-      <>
+      <Provider store={store}>
         <Container>
           <Row>
             <Col xs={2} sm={3} className='my-auto'>
@@ -48,10 +21,10 @@ export default class App extends Component {
             </Col>
           </Row>
           <Row>
-            {items}
+            <CakeList />
           </Row>
         </Container>
-      </>
+       </Provider>
     )
   }
 }
