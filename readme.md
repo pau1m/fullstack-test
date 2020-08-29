@@ -46,12 +46,7 @@ Run test ```yarn test```
 
 Originally chose to use [this boilerplate](https://github.com/alexdevero/express-react-webapp-boilerplate) as base scaffolding and used my own past work to inform technical approach to server.
 
-
-Adapted from a task set by another company (requested features in TVC spec were very similar).
-
-
 Not designed for production use. Only intended for use in local environment.
-
 
 Tasks remaining to be completed listed in repo [issue queue](https://github.com/pau1m/fullstack-test/issues) 
 
@@ -66,3 +61,6 @@ Cake form
 
 Cake display
 ![modal](https://github.com/pau1m/fullstack-test/blob/master/notes/cakemodal.png?raw=true)
+
+Mobile display
+![mobile](https://github.com/pau1m/fullstack-test/blob/master/notes/mobile.png?raw=true)
